@@ -2,10 +2,7 @@ FROM nvidia/cuda
 COPY sources.list /etc/apt/
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update 
-RUN apt install ubuntu-gnome-desktop -y
-RUN apt install nvidia-367 -y
-RUN apt install libreadline-dev zlib1g-dev bison flex -y
-RUN apt install git -y
+RUN apt install libreadline-dev zlib1g-dev bison flex wget git -y
 RUN mkdir -p /usr/src
 WORKDIR /usr/src/
 RUN wget https://ftp.postgresql.org/pub/source/v9.5.5/postgresql-9.5.5.tar.bz2
